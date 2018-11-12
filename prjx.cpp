@@ -44,7 +44,28 @@ void find(char data[],int type)
 				m += atoi(mass);
 		}
 	}
-	cout<<m;
+	cout<<"Total mass: "<<m<<endl<<endl;
+	
+	cout<<"1. Accept all applications."<<endl<<"2. Reject all applications."<<endl<<"3. Cancel."<<endl;
+	cout<<"Enter a choice";
+	int c;
+	cin>>c;
+	switch(c)
+	{
+		case 1:
+			// accept code is yet to be written
+			cout<<"Accepted";
+			break;
+		case 2:
+			// reject code is yet to be written
+			cout<<"Rejected";
+			break;
+		case 3:
+			break;
+		default:
+			cout<<"Invalid input.";
+			break;
+	}
 }
 
 main()
@@ -82,22 +103,4 @@ main()
 				cout<<"Invalid input.";
 		}
 	}while(choice != 3);
-	/*ifstream i("dtx.txt");
-	
-	char name[101];
-	i.getline(name,101);
-	char mass[101];
-	i.getline(mass,101);
-	char pin[101];
-	i.getline(pin,101);
-	char stat[101];
-	i.getline(stat,101);
-	
-	
-	
-	cout<<"Name: "<<name;
-	cout<<"\nMass: "<<mass;
-	cout<<"\nPincode: "<<pin;
-	cout<<"\nStatus: "<<stat;
-	i.close();*/
 }
