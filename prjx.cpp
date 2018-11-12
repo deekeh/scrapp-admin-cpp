@@ -47,23 +47,23 @@ void find(char data[],int type)
 	cout<<"Total mass: "<<m<<endl<<endl;
 	
 	cout<<"1. Accept all applications."<<endl<<"2. Reject all applications."<<endl<<"3. Cancel."<<endl;
-	cout<<"Enter a choice";
+	cout<<"Enter a choice: ";
 	int c;
 	cin>>c;
 	switch(c)
 	{
 		case 1:
 			// accept code is yet to be written
-			cout<<"Accepted";
+			cout<<"Accepted"<<endl<<endl;
 			break;
 		case 2:
 			// reject code is yet to be written
-			cout<<"Rejected";
+			cout<<"Rejected"<<endl<<endl;
 			break;
 		case 3:
 			break;
 		default:
-			cout<<"Invalid input.";
+			cout<<"Invalid input."<<endl<<endl;
 			break;
 	}
 }
@@ -78,7 +78,7 @@ main()
 	do
 	{
 		cout<<"1. Find using pincode."<<endl<<"2. Find using user-name."<<endl<<"3. Exit."<<endl;
-		cout<<"Enter a choice"<<endl;
+		cout<<"Enter a choice: "<<endl;
 		cin>>choice;
 		system("cls");
 		//cout<<endl;
