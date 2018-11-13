@@ -22,12 +22,15 @@ void change(char work[],char data[], int type)
 {
     ofstream of("tmp.txt");
     ifstream iff("dtx.txt");
-
     char k[101];
+    
+    bool lvx = false;
     while(!iff.eof())
     {
         iff.getline(k,101);
-        of<<k<<endl;
+        if(lvx) of<<endl;
+		lvx = true;
+        of<<k;
     }
 
     iff.close();
@@ -41,6 +44,7 @@ void change(char work[],char data[], int type)
     char p[8];
     char s[11];
     char pend[8] = "pending";
+	bool lv = false;
 
     while(!i.eof())
     {
@@ -49,9 +53,11 @@ void change(char work[],char data[], int type)
         i.getline(p,101);
         i.getline(s,101);
 
-        o<<n<<endl;
-        o<<ms<<endl;
-        o<<p<<endl;
+		if(lv) o<<endl;
+		lv = true;
+		o<<n;
+        o<<endl<<ms;
+        o<<endl<<p;
         int fnd = 0;
 
         switch(type)
@@ -61,7 +67,7 @@ void change(char work[],char data[], int type)
                 {
                     fnd = 1;
                     if(strcmp(pend,s) == 0)
-                        o<<work<<endl;
+                        o<<endl<<work;
                 }
                 break;
             case 2:
@@ -69,12 +75,12 @@ void change(char work[],char data[], int type)
                 {
                     fnd = 1;
                     if(strcmp(pend,s) == 0)
-                        o<<work<<endl;
+                        o<<endl<<work;
                 }
                 break;
         }
 
-        if(fnd == 0) o<<pend<<endl;
+        if(fnd == 0) o<<endl<<pend;
     }
 
 
@@ -118,13 +124,10 @@ void find(char data[],int type)
 	switch(c)
 	{
 		case 1:
-			// accept code is yet to be written
 			change("accepted",data,type);
 			cout<<"Accepted"<<endl<<endl;
 			break;
 		case 2:
-			// reject code is yet to be written
-
 			change("rejected",data,type);
 			cout<<"Rejected"<<endl<<endl;
 			break;
@@ -168,7 +171,8 @@ main()
 			case 3:
 				break;
 			default:
-				cout<<"Invalid input.";
+				cout<<"Invalid input."<<endl<<endl;
 		}
 	}while(choice != 3);
+	//return 0;
 }
